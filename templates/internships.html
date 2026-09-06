@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internship Opportunities</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* Search */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+        /* Internship Cards */
+        .internship-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .internship {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+            transition: transform 0.2s;
+        }
+
+        .internship:hover {
+            transform: translateY(-3px);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .internship h2 {
+            color: #2c3e50;
+            margin: 5px 0 15px;
+        }
+
+        .internship p {
+            color: #555;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 7px;
+            margin-top: 12px;
+        }
+
+        .apply-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            background-color: #555;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .back-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Internship Opportunities</h1>
+
+    <p class="subtitle">
+        Explore available internship opportunities and build your skills.
+    </p>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search internships by role or company..."
+            onkeyup="searchInternships()"
+        >
+    </div>
+
+
+    <!-- Internship List -->
+    <div class="internship-list" id="internshipList">
+
+        <!-- Internship 1 -->
+        <div class="internship">
+
+            <span class="badge">Internship Available</span>
+
+            <h2>Python Developer Intern</h2>
+
+            <p>
+                <strong>Company:</strong>
+                ABC Technologies
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Chennai
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                3 months
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                Engineering / Computer Science Students
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Python, Programming, SQL
+            </p>
+
+            <a href="/apply_internship" class="apply-button">
+                Apply Now
+            </a>
+
+        </div>
+
+
+        <!-- Internship 2 -->
+        <div class="internship">
+
+            <span class="badge">Internship Available</span>
+
+            <h2>Data Analyst Intern</h2>
+
+            <p>
+                <strong>Company:</strong>
+                XYZ Solutions
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Coimbatore
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                6 months
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                Engineering / Data Science Students
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Python, Excel, SQL, Power BI
+            </p>
+
+            <a href="/apply_internship" class="apply-button">
+                Apply Now
+            </a>
+
+        </div>
+
+
+        <!-- Internship 3 -->
+        <div class="internship">
+
+            <span class="badge">Internship Available</span>
+
+            <h2>Web Developer Intern</h2>
+
+            <p>
+                <strong>Company:</strong>
+                Tech Solutions
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Bangalore
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                3 months
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                Engineering / IT Students
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                HTML, CSS, JavaScript
+            </p>
+
+            <a href="/apply_internship" class="apply-button">
+                Apply Now
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Back -->
+    <a href="/" class="back-button">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script>
+
+function searchInternships() {
+
+    let input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let internships = document
+        .getElementsByClassName("internship");
+
+    for (let i = 0; i < internships.length; i++) {
+
+        let text = internships[i]
+            .innerText
+            .toLowerCase();
+
+        if (text.includes(input)) {
+            internships[i].style.display = "block";
+        } else {
+            internships[i].style.display = "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>

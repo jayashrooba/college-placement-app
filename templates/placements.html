@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Opportunities</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .apply-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .no-result {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Placement Opportunities</h1>
+        <p>Explore available placement opportunities and apply for suitable roles.</p>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search company or job role..."
+            onkeyup="searchJobs()"
+        >
+    </div>
+
+    <div class="cards">
+
+        <!-- TCS -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>TCS</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                Software Developer
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                B.Tech / B.E. students with 60% or above and basic programming skills.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Python, Java, Programming Basics
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+
+        <!-- Infosys -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>Infosys</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                System Engineer
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                B.Tech / B.E. students with 60% or above and knowledge of programming fundamentals.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Programming, Problem Solving, Communication
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+
+        <!-- Wipro -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>Wipro</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                Graduate Engineer Trainee
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                Final-year B.Tech / B.E. students with 60% or above and good communication skills.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Programming, Communication, Aptitude
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+    </div>
+
+    <p class="no-result" id="noResult">
+        No placement opportunities found.
+    </p>
+
+    <a href="/" class="back">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script>
+
+function searchJobs() {
+
+    let input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards = document
+        .querySelectorAll(".card");
+
+    let found = false;
+
+    cards.forEach(function(card) {
+
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+            found = true;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    if (found) {
+        document.getElementById("noResult").style.display = "none";
+    } else {
+        document.getElementById("noResult").style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Opportunities</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .apply-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .no-result {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Placement Opportunities</h1>
+        <p>Explore available placement opportunities and apply for suitable roles.</p>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search company or job role..."
+            onkeyup="searchJobs()"
+        >
+    </div>
+
+    <div class="cards">
+
+        <!-- TCS -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>TCS</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                Software Developer
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                B.Tech / B.E. students with 60% or above and basic programming skills.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Python, Java, Programming Basics
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+
+        <!-- Infosys -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>Infosys</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                System Engineer
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                B.Tech / B.E. students with 60% or above and knowledge of programming fundamentals.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Programming, Problem Solving, Communication
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+
+        <!-- Wipro -->
+        <div class="card">
+            <span class="badge">Placement Available</span>
+
+            <h2>Wipro</h2>
+
+            <p>
+                <strong>Job Role:</strong>
+                Graduate Engineer Trainee
+            </p>
+
+            <p>
+                <strong>Eligibility:</strong>
+                Final-year B.Tech / B.E. students with 60% or above and good communication skills.
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                Programming, Communication, Aptitude
+            </p>
+
+            <a href="/apply_placement" class="apply-btn">
+                Apply Now
+            </a>
+        </div>
+
+    </div>
+
+    <p class="no-result" id="noResult">
+        No placement opportunities found.
+    </p>
+
+    <a href="/" class="back">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script>
+
+function searchJobs() {
+
+    let input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards = document
+        .querySelectorAll(".card");
+
+    let found = false;
+
+    cards.forEach(function(card) {
+
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+            found = true;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    if (found) {
+        document.getElementById("noResult").style.display = "none";
+    } else {
+        document.getElementById("noResult").style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
